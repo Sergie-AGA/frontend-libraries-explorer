@@ -1,7 +1,7 @@
 # Frontend Libraries Explorer
 
 This project aims to be a full-stack application that explores different web dev libraries. This is part of a larger Web Dev Explorer series of repositories.
-The frontend uses mainly Next JS with Tailwind and Typescript, but projects inside it may use a range of different technologies.
+The frontend uses mainly Next JS (page directory) with Tailwind and Typescript, but projects inside it may use a range of different technologies.
 The backend primarily uses Node JS with Typescript, but specific technologies may vary. The backend will rely on the API folder within Next JS
 
 ## Projects
