@@ -4,7 +4,14 @@ import { drizzle } from "drizzle-orm/planetscale-serverless";
 import { quotes, authors, categories } from "@/db/schema";
 import { eq } from "drizzle-orm";
 
-export default async function getAllQuotes(): Promise<Quote[]> {
+const prevQuoteObj = {
+  prev: 1,
+  setPrev: function (num: number) {
+    this.prev = num;
+  },
+};
+
+export default async function getRandomQuote(): Promise<Quote> {
   const conn = connect(config);
   const db = drizzle(conn);
 
@@ -18,5 +25,13 @@ export default async function getAllQuotes(): Promise<Quote[]> {
     .innerJoin(authors, eq(quotes.authorId, authors.id))
     .innerJoin(categories, eq(quotes.categoryId, categories.id));
 
-  return results;
+  let randomIndex = prevQuoteObj.prev;
+
+  while (randomIndex === prevQuoteObj.prev) {
+    randomIndex = Math.floor(Math.random() * results.length);
+  }
+
+  prevQuoteObj.setPrev(randomIndex);
+
+  return results[randomIndex];
 }
