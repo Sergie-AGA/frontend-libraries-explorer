@@ -5,7 +5,6 @@ import { quotes, authors, categories } from "@/db/schema";
 import { eq } from "drizzle-orm";
 
 export default async function getAllQuotes(): Promise<Quote[]> {
-  console.log(1);
   const conn = connect(config);
   const db = drizzle(conn);
 
