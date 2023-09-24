@@ -15,3 +15,5 @@ This project was built initially inspired by Dave Gray's course about Drizzle, b
 Tech Stack
 Frontend: ?
 Backend: Drizzle ORM, PlatScale MySQL
+
+## Project 2 - Supabase details pending...
