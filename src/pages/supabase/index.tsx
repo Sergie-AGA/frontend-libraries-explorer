@@ -1,5 +1,10 @@
-import { Heading, Text } from "@ignite-ui/react";
+import { ReactElement } from "react";
+import Layout from "./layout";
 
-export default function Home() {
-  return <Heading as="h1">Hello Supabase</Heading>;
+export default function Page() {
+  return <h1>Hey Supabase</h1>;
 }
+
+Page.getLayout = function getLayout(page: ReactElement) {
+  return <Layout>{page}</Layout>;
+};
